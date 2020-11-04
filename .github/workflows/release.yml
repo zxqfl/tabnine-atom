@@ -1,7 +1,7 @@
-name: Atom Package
+name: Create Release
 
 on:
-  create:
+  push:
     tags:
       - 'v*.*.*'
 
