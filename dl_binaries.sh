@@ -22,3 +22,6 @@ do
     curl -sS https://update.tabnine.com/$path > binaries/$path
     chmod +x binaries/$path
 done
+
+binariesver=$(grep -Eo '!binaries/.*' .gitignore | cut -c10-)
+sed "s+$binariesver+/$version+g" .gitignore >.gitignore.tmp && mv .gitignore.tmp .gitignore
